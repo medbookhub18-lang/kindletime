@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KindleTime</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h1>Welcome to KindleTime 📚</h1>
-  <p>Book summaries and smart reading platform</p>
+
+  <!-- HEADER -->
+  <header>
+    <h1>KindleTime 📚</h1>
+    <p style="color:white;">Smart Book Summaries & Reading Platform</p>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="container">
+    <input type="text" placeholder="Search books..." style="
+      width:100%;
+      padding:12px;
+      margin-top:20px;
+      border-radius:8px;
+      border:1px solid #ddd;
+      font-size:14px;
+    ">
+  </div>
+
+  <!-- BOOK LIST -->
+  <div class="container">
+
+    <!-- Book 1 -->
+    <div class="book-card">
+      <div class="book-title">Atomic Habits</div>
+      <div class="book-desc">A guide to building good habits and breaking bad ones.</div>
+      <a class="btn" href="#">Read Summary</a>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="book-card">
+      <div class="book-title">Rich Dad Poor Dad</div>
+      <div class="book-desc">Learn financial intelligence and mindset for success.</div>
+      <a class="btn" href="#">Read Summary</a>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="book-card">
+      <div class="book-title">Deep Work</div>
+      <div class="book-desc">Focus deeply and achieve high productivity in work.</div>
+      <a class="btn" href="#">Read Summary</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center; padding:20px; color:#777;">
+    © 2026 KindleTime - Learn faster through books 📖
+  </footer>
+
 </body>
 </html>
