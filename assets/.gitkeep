@@ -1,0 +1,8 @@
+assets/
+ ├── logo.png
+ ├── book1.jpg
+ ├── book2.jpg
+ ├── icons/
+ │     ├── search.svg
+ │     ├── book.svg
+ │     ├── user.svg
