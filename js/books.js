@@ -9,6 +9,7 @@ const BOOKS = [
     year: 2018,
     featured: true,
     coverColor: ["#FF6B35", "#FF9900"],
+    isbn: "0735211299",
     description: "Tiny changes, remarkable results. Discover how 1% improvements compound into life-changing outcomes through the science of habit formation.",
     summary: `<h3>The Compound Effect of Small Actions</h3>
 <p>James Clear's <em>Atomic Habits</em> reframes how we think about self-improvement. Forget dramatic transformations — the secret lies in making tiny, consistent changes that compound over time. Improving by just 1% every day leads to being 37 times better by year's end. The reverse is equally true: tiny degradations accumulate into failure.</p>
@@ -35,6 +36,7 @@ const BOOKS = [
     year: 1997,
     featured: false,
     coverColor: ["#4776E6", "#8E54E9"],
+    isbn: "1612680194",
     description: "What the rich teach their kids about money that the poor and middle class do not. A foundational guide to financial literacy and building wealth.",
     summary: `<h3>Two Dads, Two Mindsets</h3>
 <p>Robert Kiyosaki grew up with two father figures: his biological "Poor Dad" — a highly educated government employee — and his best friend's "Rich Dad," a self-made entrepreneur. Their contrasting advice about money forms the backbone of this landmark book. The core tension: one believed in working for money, the other believed in making money work for you.</p>
@@ -61,6 +63,7 @@ const BOOKS = [
     year: 2016,
     featured: true,
     coverColor: ["#11998e", "#38ef7d"],
+    isbn: "1455586692",
     description: "Rules for focused success in a distracted world. Learn to master the art of concentration and produce high-value work in an age of constant interruption.",
     summary: `<h3>The Deep Work Hypothesis</h3>
 <p>Cal Newport opens with a bold claim: the ability to perform deep work — cognitively demanding tasks executed in a state of distraction-free concentration — is becoming increasingly rare and increasingly valuable. Those who cultivate it will thrive; those who cannot will struggle. Newport argues this isn't just productivity advice — it's career strategy.</p>
@@ -87,6 +90,7 @@ const BOOKS = [
     year: 2011,
     featured: false,
     coverColor: ["#8360c3", "#2ebf91"],
+    isbn: "0374533555",
     description: "A Nobel laureate's exploration of the two systems that drive the way we think — and how their interplay shapes every decision we make.",
     summary: `<h3>Two Systems of Thought</h3>
 <p>Nobel Prize-winning psychologist Daniel Kahneman presents the idea that human thinking operates through two systems. <strong>System 1</strong> is fast, intuitive, and emotional — it runs automatically, making snap judgments and pattern-matching with minimal effort. <strong>System 2</strong> is slow, deliberate, and logical — it handles complex calculations, conscious decision-making, and nuanced analysis, but is mentally taxing and lazy by nature.</p>
@@ -113,6 +117,7 @@ const BOOKS = [
     year: 2011,
     featured: true,
     coverColor: ["#c94b4b", "#4b134f"],
+    isbn: "0062316095",
     description: "A brief history of humankind — from the cognitive revolution 70,000 years ago to the present day, asking what made Homo sapiens the dominant species on Earth.",
     summary: `<h3>The Cognitive Revolution</h3>
 <p>Around 70,000 years ago, Homo sapiens underwent a remarkable cognitive transformation that enabled complex language, abstract thinking, and most crucially — the ability to believe in things that don't physically exist: gods, nations, money, human rights. Harari argues this capacity for "shared myths" is what allowed large-scale human cooperation and ultimately our dominance over the planet.</p>
@@ -139,6 +144,7 @@ const BOOKS = [
     year: 2011,
     featured: false,
     coverColor: ["#0575E6", "#021B79"],
+    isbn: "0307887898",
     description: "How today's entrepreneurs use continuous innovation to create radically successful businesses — a methodology for launching under conditions of extreme uncertainty.",
     summary: `<h3>The Problem with Traditional Startups</h3>
 <p>Eric Ries observed that many startups follow a "just do it" philosophy — build a product in secret, launch with fanfare, then fail because nobody wants it. Traditional management techniques, optimized for known markets with predictable outcomes, are poorly suited to startups navigating extreme uncertainty. A new methodology was needed.</p>
@@ -165,6 +171,7 @@ const BOOKS = [
     year: 1946,
     featured: false,
     coverColor: ["#6a3093", "#a044ff"],
+    isbn: "0807014273",
     description: "A psychiatrist's account of surviving Nazi concentration camps, and the psychological framework — logotherapy — he developed from that experience.",
     summary: `<h3>Surviving the Unimaginable</h3>
 <p>Viktor Frankl, a Viennese psychiatrist, spent three years in Nazi concentration camps including Auschwitz. Unlike most Holocaust memoirs, this book is less about the horror of the camps and more about the inner psychological life that either sustained or destroyed prisoners. Frankl observed that those who survived longest were not necessarily the physically strongest — they were those who found a reason to live.</p>
@@ -191,6 +198,7 @@ const BOOKS = [
     year: 1997,
     featured: false,
     coverColor: ["#f093fb", "#f5576c"],
+    isbn: "1577314808",
     description: "A guide to spiritual enlightenment that teaches how living fully in the present moment is the path to peace, freedom, and authentic joy.",
     summary: `<h3>The Mind as Obstacle</h3>
 <p>Eckhart Tolle's central argument is that most human suffering is self-created through the compulsive activity of the mind — specifically, its tendency to dwell on the past (producing guilt and regret) or project into the future (producing anxiety and fear). The mind is not who you are; it is a tool that most people have allowed to run unchecked, generating an incessant stream of thought that masquerades as identity.</p>
@@ -217,6 +225,7 @@ const BOOKS = [
     year: 2014,
     featured: true,
     coverColor: ["#00c6ff", "#0072ff"],
+    isbn: "0804139296",
     description: "Notes on startups, or how to build the future. Thiel argues that true innovation means creating something genuinely new — going from zero to one, not from one to many.",
     summary: `<h3>The Contrarian Question</h3>
 <p>Peter Thiel opens with his famous interview question: "What important truth do few people agree with you on?" Great companies are built on contrarian insights — things that are true but widely disbelieved. The best businesses are built not by copying existing models (going from 1 to n) but by creating something genuinely new (going from 0 to 1). Vertical progress is harder and rarer than horizontal progress, but its value is orders of magnitude greater.</p>
@@ -243,6 +252,7 @@ const BOOKS = [
     year: 2016,
     featured: false,
     coverColor: ["#ff416c", "#ff4b2b"],
+    isbn: "0062457713",
     description: "A counterintuitive approach to living a good life — not by chasing positivity, but by choosing what truly deserves your energy and attention.",
     summary: `<h3>The Feedback Loop from Hell</h3>
 <p>Mark Manson argues that modern culture's obsession with positivity makes people feel worse, not better. The more you chase feeling good all the time, the more anxious you become when you don't feel good. This creates a "feedback loop from hell" — feeling bad about feeling bad. The solution isn't to seek more positive experiences but to get better at handling negative ones.</p>
@@ -269,6 +279,7 @@ const BOOKS = [
     year: 2008,
     featured: false,
     coverColor: ["#1a9850", "#66bd63"],
+    isbn: "1603580557",
     description: "A primer on systems thinking — understanding why the world behaves the way it does, and how to intervene effectively in complex systems.",
     summary: `<h3>What Is a System?</h3>
 <p>A system is a set of elements interconnected in ways that produce behavior over time. Systems are everywhere: ecosystems, economies, organizations, families, your body. Donella Meadows argues that most of the world's most intractable problems — poverty, pollution, war, inequality — arise from the structure of the systems in which they're embedded, not from isolated bad actors or unlucky events.</p>
@@ -295,6 +306,7 @@ const BOOKS = [
     year: 1998,
     featured: false,
     coverColor: ["#2c3e50", "#4ca1af"],
+    isbn: "0140280197",
     description: "Three thousand years of history distilled into 48 laws — a candid, often disturbing manual for understanding the dynamics of power in human relationships.",
     summary: `<h3>Power Is Amoral</h3>
 <p>Robert Greene opens by asserting that power is a constant in human interaction — the only question is whether you understand it or not. The 48 Laws are drawn from the historical strategies of figures like Machiavelli, Sun Tzu, Queen Elizabeth I, and P.T. Barnum. Greene presents them without moral judgment: these are observations about how power actually works, not prescriptions for how it should work.</p>
@@ -321,6 +333,7 @@ const BOOKS = [
     year: 1965,
     featured: true,
     coverColor: ["#f7971e", "#ffd200"],
+    isbn: "0441013597",
     description: "On the desert planet Arrakis, young Paul Atreides discovers his destiny amid political intrigue, ecological struggle, and the most valuable substance in the universe.",
     summary: `<h3>A World of Sand and Power</h3>
 <p>Set far in the future when humanity has spread across the galaxy, <em>Dune</em> centers on Arrakis — a harsh desert planet that is the sole source of "spice melange," a substance that extends life, enhances perception, and enables interstellar navigation. Control of Arrakis means control of the known universe, making it the most coveted and contested world in existence.</p>
@@ -347,6 +360,7 @@ const BOOKS = [
     year: 1949,
     featured: false,
     coverColor: ["#232526", "#414345"],
+    isbn: "0451524934",
     description: "Winston Smith struggles to maintain his humanity in a totalitarian society where the Party controls all aspects of life — including history, language, and thought itself.",
     summary: `<h3>Oceania and the Party</h3>
 <p>George Orwell's dystopian masterpiece imagines a world of three superstates locked in perpetual warfare, where Oceania is ruled by a totalitarian party led by the enigmatic figure of Big Brother. The Party's power rests not merely on surveillance and force, but on something far more insidious: the systematic destruction of objective reality through the manipulation of language and history.</p>
@@ -373,6 +387,7 @@ const BOOKS = [
     year: 1988,
     featured: false,
     coverColor: ["#4facfe", "#00f2fe"],
+    isbn: "0553380168",
     description: "One of the most celebrated science books ever written — Hawking's accessible tour of cosmology, from the Big Bang to black holes to the nature of time itself.",
     summary: `<h3>The Universe's Origin Story</h3>
 <p>Stephen Hawking begins at the beginning: the Big Bang, the moment roughly 13.8 billion years ago when all matter, energy, space, and time sprang into existence from a state of infinite density. The question "what happened before the Big Bang?" is meaningless, Hawking argues — time itself began at the Big Bang. There was no "before."</p>
@@ -399,6 +414,7 @@ const BOOKS = [
     year: 2018,
     featured: false,
     coverColor: ["#43e97b", "#38f9d7"],
+    isbn: "0399590501",
     description: "A memoir of a young woman who grew up with no formal education in a survivalist family in the Idaho mountains, and her journey to Cambridge and Oxford.",
     summary: `<h3>A Childhood Without School</h3>
 <p>Tara Westover grew up in a survivalist Mormon family in the mountains of Idaho, the youngest of seven children. Her father, convinced the government and public education were instruments of corruption, kept his children out of school entirely. Tara had no birth certificate, never saw a doctor, and spent her childhood working in the family junkyard and preparing for "the Days of Abomination."</p>
@@ -425,6 +441,7 @@ const BOOKS = [
     year: 500,
     featured: false,
     coverColor: ["#b71c1c", "#e53935"],
+    isbn: "1590302255",
     description: "Written 2,500 years ago, this ancient Chinese military treatise contains timeless principles of strategy, leadership, and conflict resolution applicable far beyond warfare.",
     summary: `<h3>Know Yourself and Your Enemy</h3>
 <p>Sun Tzu's most quoted maxim frames the book's fundamental logic: "If you know the enemy and know yourself, you need not fear the result of a hundred battles. If you know yourself but not the enemy, for every victory gained you will also suffer a defeat. If you know neither the enemy nor yourself, you will succumb in every battle." Self-knowledge and intelligence about opposition are the twin foundations of strategic success.</p>
@@ -451,6 +468,7 @@ const BOOKS = [
     year: 1995,
     featured: false,
     coverColor: ["#e040fb", "#7b1fa2"],
+    isbn: "055338371X",
     description: "Why emotional intelligence — the ability to understand and manage emotions — may matter more than IQ in determining success in life and work.",
     summary: `<h3>Beyond IQ</h3>
 <p>When Daniel Goleman published this book in 1995, it landed as a provocation: IQ and technical skill alone do not determine success in life or work. Studies of top performers consistently showed that emotional competencies — self-awareness, self-regulation, motivation, empathy, social skills — distinguished the best from the merely competent. Goleman named this cluster of capabilities "Emotional Intelligence" and launched a global conversation.</p>
@@ -477,6 +495,7 @@ const BOOKS = [
     year: 1997,
     featured: false,
     coverColor: ["#1565c0", "#42a5f5"],
+    isbn: "0062060244",
     description: "Why successful, well-managed companies consistently fail when confronted with disruptive innovations — and what to do about it.",
     summary: `<h3>Why Good Management Can Lead to Failure</h3>
 <p>Clayton Christensen's central paradox is one of the most unsettling in business: companies that fail to adapt to disruptive change often do so not because of bad management, but because of good management. By listening to their best customers, investing in the highest-margin products, and optimizing their core operations, these companies rationally optimize themselves out of existence when disruptive technologies emerge.</p>
@@ -503,6 +522,7 @@ const BOOKS = [
     year: 1988,
     featured: true,
     coverColor: ["#f9a825", "#ff6f00"],
+    isbn: "0062315007",
     description: "A young Andalusian shepherd embarks on a journey to find treasure near the Egyptian pyramids, discovering along the way that the real treasure lies within.",
     summary: `<h3>The Personal Legend</h3>
 <p>Paulo Coelho's beloved fable opens with Santiago, an Andalusian shepherd who dreams of discovering treasure near the Egyptian pyramids. After consulting with a Gypsy woman and the mysterious Melchizedek — who reveals himself as the King of Salem — Santiago decides to follow his "Personal Legend," Coelho's term for the unique dream that every soul comes into the world with the calling to fulfill.</p>

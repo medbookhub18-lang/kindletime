@@ -5,6 +5,52 @@
 /* ---------- Google Fonts ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Poppins:wght@400;600;700;800&display=swap');
 
+/* ============================================================
+   COVER PHOTO — shared rule used in every cover container
+   z-index layering (low → high):
+     1  cover-photo   — real book jacket from Open Library
+     2  ::before      — dark gradient overlay (keeps text legible)
+     3  spine / badge / title text
+   When the <img> fails to load, onerror hides it; the gradient
+   background of the parent div acts as the automatic fallback.
+   ============================================================ */
+.cover-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: 1;
+  border-radius: inherit;
+  /* Fade in when loaded so the gradient → photo transition is smooth */
+  animation: coverFadeIn 0.3s ease;
+}
+
+@keyframes coverFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Search dropdown thumbnail — small size, no fade needed */
+.dropdown-cover .cover-photo {
+  border-radius: 4px;
+  animation: none;
+}
+
+/* Initials text sits behind the photo; hidden once photo loads */
+.dropdown-initials {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+  z-index: 0;
+}
+
 /* ---------- CSS Variables ---------- */
 :root {
   --bg:          #FFFFFF;
@@ -387,6 +433,7 @@ img { max-width: 100%; display: block; }
 .dropdown-item:hover { background: var(--bg-alt); }
 
 .dropdown-cover {
+  position: relative;
   width: 36px; height: 48px;
   border-radius: 4px;
   flex-shrink: 0;
@@ -399,6 +446,7 @@ img { max-width: 100%; display: block; }
   text-align: center;
   line-height: 1.2;
   letter-spacing: 0.2px;
+  overflow: hidden;
   overflow: hidden;
 }
 
@@ -475,8 +523,9 @@ img { max-width: 100%; display: block; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.08);
+  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 60%);
   border-radius: 8px;
+  z-index: 2;
 }
 
 .stack-book .spine {
@@ -485,6 +534,7 @@ img { max-width: 100%; display: block; }
   width: 10px;
   background: rgba(0,0,0,0.2);
   border-radius: 8px 0 0 8px;
+  z-index: 3;
 }
 
 .stack-book-title {
@@ -495,7 +545,7 @@ img { max-width: 100%; display: block; }
   color: white;
   line-height: 1.3;
   text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-  z-index: 1;
+  z-index: 3;
 }
 
 /* ============================================================
@@ -613,6 +663,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 55%);
+  z-index: 2;
 }
 
 .featured-cover-spine {
@@ -620,6 +671,7 @@ img { max-width: 100%; display: block; }
   left: 0; top: 0; bottom: 0;
   width: 8px;
   background: rgba(0,0,0,0.25);
+  z-index: 3;
 }
 
 .featured-cover-title {
@@ -630,7 +682,7 @@ img { max-width: 100%; display: block; }
   color: white;
   text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   line-height: 1.3;
-  z-index: 1;
+  z-index: 3;
 }
 
 .featured-meta { padding: 0 2px; }
@@ -777,6 +829,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 55%);
+  z-index: 2;
 }
 
 .card-cover-spine {
@@ -784,11 +837,12 @@ img { max-width: 100%; display: block; }
   left: 0; top: 0; bottom: 0;
   width: 8px;
   background: rgba(0,0,0,0.2);
+  z-index: 3;
 }
 
 .card-cover-text {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .card-cover-title {
@@ -819,7 +873,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 100px;
-  z-index: 1;
+  z-index: 3;
   letter-spacing: 0.3px;
 }
 
@@ -1082,6 +1136,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 55%);
+  z-index: 2;
 }
 
 .modal-cover-spine {
@@ -1090,11 +1145,12 @@ img { max-width: 100%; display: block; }
   width: 10px;
   background: rgba(0,0,0,0.2);
   border-radius: var(--radius-md) 0 0 var(--radius-md);
+  z-index: 3;
 }
 
 .modal-cover-text {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .modal-cover-text strong {

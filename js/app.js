@@ -55,6 +55,30 @@ function coverInitials(title) {
   return title.split(' ').slice(0, 2).map(w => w[0]).join('').toUpperCase();
 }
 
+/* Returns the Open Library cover URL for a given ISBN and size (S/M/L). */
+function coverUrl(book, size = 'M') {
+  if (!book.isbn) return null;
+  return `https://covers.openlibrary.org/b/isbn/${book.isbn}-${size}.jpg`;
+}
+
+/*
+ * Injects a <img> into a cover container so the real photo loads on top of
+ * the CSS-gradient fallback.  When the network image 404s or errors, the
+ * onerror handler hides the element and the gradient background shows through.
+ */
+function coverPhotoTag(book, altSuffix = 'cover', size = 'M') {
+  const src = coverUrl(book, size);
+  if (!src) return '';
+  return `<img
+    class="cover-photo"
+    src="${src}"
+    alt="${book.title} ${altSuffix}"
+    loading="lazy"
+    decoding="async"
+    onerror="this.style.display='none'"
+  >`;
+}
+
 /* ============================================================
    HERO BOOK STACK
    ============================================================ */
@@ -80,6 +104,7 @@ function renderBookStack() {
         transform: rotate(${pos.rot}deg);
         z-index: ${pos.zIndex};
       ">
+        ${coverPhotoTag(book, 'book cover', 'M')}
         <div class="spine"></div>
         <span class="stack-book-title">${book.title}</span>
       </div>`;
@@ -97,6 +122,7 @@ function renderFeaturedBooks() {
   track.innerHTML = featured.map(book => `
     <div class="featured-card" onclick="openBookDetail(${book.id})" tabindex="0" role="button" aria-label="View ${book.title}">
       <div class="featured-cover" style="${makeCoverStyle(book)}">
+        ${coverPhotoTag(book, 'book cover')}
         <div class="featured-cover-spine"></div>
         <span class="featured-cover-title">${book.title}</span>
       </div>
@@ -216,6 +242,7 @@ function renderBooksGrid() {
       style="animation-delay: ${i * 0.04}s"
     >
       <div class="card-cover" style="${makeCoverStyle(book)}">
+        ${coverPhotoTag(book, 'book cover')}
         <div class="card-cover-spine"></div>
         ${book.featured ? '<span class="card-cover-badge">Featured</span>' : ''}
         <div class="card-cover-text">
@@ -273,7 +300,8 @@ function showSearchDropdown(query) {
   dropdown.innerHTML = matches.map(book => `
     <div class="dropdown-item" onclick="selectDropdownBook(${book.id})">
       <div class="dropdown-cover" style="${makeCoverStyle(book)}">
-        ${coverInitials(book.title)}
+        ${coverPhotoTag(book, 'thumbnail', 'S')}
+        <span class="dropdown-initials">${coverInitials(book.title)}</span>
       </div>
       <div class="dropdown-info">
         <strong>${highlightMatch(book.title, query)}</strong>
@@ -321,6 +349,7 @@ function openBookDetail(id) {
     <div class="modal-layout">
       <div class="modal-cover-wrap">
         <div class="modal-cover" style="${makeCoverStyle(book)}">
+          ${coverPhotoTag(book, 'book cover', 'L')}
           <div class="modal-cover-spine"></div>
           <div class="modal-cover-text">
             <strong>${book.title}</strong>
